@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.js"></script>
+    <title>TicTacToe</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline-block;
+            max-width: 500px;
+            background-color: aliceblue;
+            vertical-align: top;
+            border-radius: 20%;
+            text-align: center;
+            margin: 2px auto;
+        }
+        #reset{
+            width: 100px;
+            height: 25px;
+            margin: 10px;
+            background-color: lightslategray;
+            color: black;
+        }
+
+        #grid {
+            width: 330px;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>TicTacToe</h1>
+    <button id = "reset">RESET GAME</button>
+<div id="grid">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+<script>
+
+    var game = {
+        players: [{name:"porky", pic:"porky.gif"}, {name:"taz", pic:"taz.png"}],
+        currentPlayer: null,
+        done: false,
+        winner: false,
+        boxesTaken: 0,
+        init: function(){
+            console.log("Game initialized");
+            game.currentPlayer = game.players[0];
+            
+        },
+        switchPlayer: function(){
+            if(game.currentPlayer === game.players[0]){
+                game.currentPlayer = game.players[1]
+            } else {
+                game.currentPlayer = game.players[0]
+            }
+        },
+        checkFirstLine: function(){
+            if($(".box").eq(0).html() !== "" ) {
+                var firstLine = $(".box").eq(0).html() === $(".box").eq(1).html() &&
+                $(".box").eq(1).html() === $(".box").eq(2).html()
+                return firstLine;
+            }
+        },
+        checkSecondLine: function(){
+            if($(".box").eq(3).html() !== "" ) {   
+            var secondLine = $(".box").eq(3).html() === $(".box").eq(4).html() &&
+                $(".box").eq(4).html() === $(".box").eq(5).html() 
+                return secondLine;
+            }
+        },
+        checkThirdLine: function(){
+            if($(".box").eq(6).html() !== "" ) {               
+            var thirdLine = $(".box").eq(6).html() === $(".box").eq(7).html() &&
+                $(".box").eq(7).html() === $(".box").eq(8).html() 
+                return thirdLine;
+            }
+        },
+        checkFirstColumn: function(){
+            if($(".box").eq(0).html() !== "" ) {                           
+            var firstRow = $(".box").eq(0).html() === $(".box").eq(3).html() &&
+                $(".box").eq(3).html() === $(".box").eq(6).html() 
+                return firstRow;
+            }
+        },
+        checkSecondColumn: function(){
+            if($(".box").eq(1).html() !== "" ) {                                       
+            var secondRow = $(".box").eq(1).html() === $(".box").eq(4).html() &&
+                $(".box").eq(4).html() === $(".box").eq(7).html() 
+                return secondRow;
+            }
+        },
+        checkThirdColumn: function(){
+            if($(".box").eq(2).html() !== "" ) {                                       
+            var thirdRow = $(".box").eq(2).html() === $(".box").eq(5).html() &&
+                $(".box").eq(5).html() === $(".box").eq(8).html() 
+                return thirdRow;
+        }
+        }, 
+        checkDiagonalL: function(){
+            if($(".box").eq(0).html() !== "" ) {                                                   
+            var diagonalL= $(".box").eq(0).html() === $(".box").eq(4).html() &&
+                $(".box").eq(4).html() === $(".box").eq(8).html() 
+                return diagonalL;
+            }
+        },
+
+        checkDiagonalR: function(){
+            if($(".box").eq(2).html() !== "" ) {                                           
+            var diagonalR= $(".box").eq(2).html() === $(".box").eq(4).html() &&
+                $(".box").eq(4).html() === $(".box").eq(6).html() 
+                return diagonalR;
+            }
+        }, 
+
+        clearBoard: function(){
+            $boxes.html("");
+            game.init();
+        } 
+    }
+        
+    var $boxes = $(".box");
+    var $reset = $("#reset");
+
+    game.init()
+    
+
+    function clickHandler(evt) {
+        if($(this).html() === ""){
+            var image = "<img src='" + game.currentPlayer.pic + "'/>";
+            $(this).html(image)
+            game.boxesTaken++
+            console.log(game.boxesTaken);
+            game.switchPlayer()
+        } else {
+            alert("Click another box");
+        } 
+        if (game.boxesTaken == 8){
+            alert("game over!");       
+            game.clearBoard();            
+            game.init();
+            }
+            // game.boxesTaken == 5  && 
+        if(game.checkFirstLine() === true
+            || game.checkSecondLine() === true
+            || game.checkThirdLine() === true 
+            || game.checkFirstColumn() === true 
+            || game.checkSecondColumn() === true 
+            || game.checkThirdColumn() === true
+            || game.checkDiagonalR() === true 
+            || game.checkDiagonalL() === true){ 
+               game.switchPlayer()
+               alert(game.currentPlayer.name + " has won!");
+               game.clearBoard();
+            } 
+        }
+
+        function resetGame(){
+            game.clearBoard()
+            game.init();
+        }
+        
+    $boxes.on("click", clickHandler);
+    $reset.on("click", resetGame);
+
+
+</script>
+</body>
+</html>

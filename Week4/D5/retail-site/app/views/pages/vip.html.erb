@@ -1,0 +1,23 @@
+
+<p>You're a VIP! Here are some special deals for you.</p>
+
+<% @inventory.each do |i| %>
+       <% if i[:vip] == true and @user == true and i[:stock] != 0 %>
+       <% x = i[:price] - i[:price] * 0.2 %>
+            <li>
+                <ul> 
+                    <li class = "items"><%= i[:category] %></li>
+                    <li class = "items"><%= i[:name] %></li>
+                    <li class = "items"><%= i[:description] %></li>
+                    <li class = "items"><%="$"%><%= x %></li>
+                    <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                    <li class = "items"><%= i[:vip] %></li>
+                    <li class = "items"><%= i[:men_or_women] %></li>
+                    <img class = "image" src= "<%= i[:image] %>" />
+                    <span class = "qty">Quantity </span><input id = "quantity-input">                
+                    <button class = "add-button"><%= "Add to cart" %> </button>
+                </ul>
+            </li>
+        <%end%>
+<%end%>
+  

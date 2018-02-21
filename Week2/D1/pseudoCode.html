@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//      function totalCost(cost, state)
+//      create function totalCost
+//      create a variable to put in your cost
+//      if statement. if state is CA cost = cost + cost*tax
+//      create variable to put in state
+//      do the math (create var to put in total cost)
+//      return
+//      tada!
+
+// function totalCost(cost, state) {
+//     var total;
+//     var state = state.toUpperCase();
+//     if(state === "CA") {
+//          total = cost + (cost*9.3/100)
+//     } else if(state === "WA") {
+//         total = cost + (cost*6.5/100)
+//             } else if(state === "OR") {
+//                 total = cost + (cost*0)
+//         } else { 
+//             return "please enter a valid state"
+//         }return total 
+// }
+// console.log(totalCost(10, "wa"));
+
+// what is prime ?
+// create a function where you define a prime number.
+// creating a loop so the number when divided by another number which is NOT 1 or itself, has a remainder != 0
+
+   function isPrime(number) {
+        for (var i = 2; i < number-1; i++){
+            if(number % i === 0 && number > 0) {
+                return false;
+            } 
+        } return number > 1 
+   } console.log(isPrime(67));
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,12 @@
+<form>
+      <% if @user == false %>
+      <div class="container">
+          <input id="email" type="text" class="email-input" placeholder="Email Address">      
+          <input id="password" type="password" class="password-input" placeholder="Password?">
+        </div>
+        <button type="submit" class="btn">LOG IN</button>
+        <% else %>
+            <p> You're already logged in </p>
+        <% end %>
+</form>
+ 

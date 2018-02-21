@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+   <div id = "the-container">
+        <div id = "bunny-1">Wabbit 1</div> 
+        <div id = "bunny-2">Wabbit 2 <button id = "kille-bunny-2-btn">kill me</button></div> 
+        <div id = "bunny-3">Wabbit 3</div> 
+   </div>
+    
+   <script>
+       var $bunny1 = $("#bunny-1");
+       var $bunny2 = $("#bunny-2");
+       var $bunny3 = $("#bunny-3");
+       var $killBunny2Btn = $("kill-bunny-2-btn");
+       var theContainer = $("#the-container")
+
+
+       function killBunny2(){
+           $(this).parent().remove();
+       }
+
+       $killBunny2Btn.on("click", killBunny2);
+   
+   </script>
+
+</body>
+</html>

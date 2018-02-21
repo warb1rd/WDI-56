@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <title>jQuery Intro</title>
+</head>
+<body>
+    <h1>Hello Y'all</h1>
+    <h2>My favorite country songs</h2>
+    <ul>
+        <li>Yeah</li>
+        <li>Smalltown boy</li>
+        <li id = "four">Wagonwheel</li>
+        <li>My truck</li>
+        <li>Tennessee Whiskey</li>
+    </ul>
+    <script>
+    $('h2').css({border:'2px dashed black', backgroundColor: 'olive'})
+    $('body').css({border:'2px dashed black', backgroundColor: 'beige'})
+    $('h1').css({border:'1px dashed black', color: 'black', backgroundColor: 'grey'})
+    $('li').css({border:'1px dashed tomato', color: 'olive', backgroundColor: 'lightBlue'})
+
+    console.log($('h1').text())
+    $('h1').text('wow')
+    $('#four').css({border: '2px solid black'})
+
+//  add event listener for jQuery $ selects all the li and on click, it executes a function hideAll
+    function hideAll(){
+        $(this).hide(1000)    
+    }
+    $("li").on("click", hideAll)
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "title-page">My favorite bands</h1>
+    <ul id = "the-bands">
+        <li id = "first-band">Pearl Jam</li>
+        <li id = "second-band">Queen</li>
+        <li id = "third-band">The Beatles</li>
+    </ul>
+    <ul>
+        <li>Dario</li>
+        <li>Noura</li>
+        <li>Eli</li>
+    </ul>
+
+    <ul id = "student-list">
+
+    </ul>
+
+    <script>
+
+    var titlePage = document.querySelector("#title-page");
+    titlePage.style.background = "olive";
+    titlePage.style.border = "2px solid black";
+
+    var list1 = document.querySelector("#first-band");
+    list1.style.background = "yellow";
+    list1.style.border = "2px dashed black";
+    list1.innerHTML = "Simon & Garfunkel";
+
+    var list2 = document.querySelector("#second-band");
+    list2.style.background = "brown";
+    list2.style.border = "2px dotted black";
+    list2.innerHTML = "Pink Floyd";
+
+    var list3 = document.querySelector("#third-band");
+    list3.style.background = "teal";
+    list3.style.border = "2px solid black";
+    list3.innerHTML = "Porcupine Tree";
+
+    var theLis = document.querySelectorAll("li");
+    for( var i = 0; i < theLis.length; i++){
+        theLis[i].style.border = "2px solid blue"}
+
+    var theBands = document.querySelector("#the-bands")
+    var theNewBand = document.createElement("li");
+    theNewBand.innerText = "U2";
+    theBands.appendChild(theNewBand);
+
+
+    var studentsArray = ["mahima", "daniel", "tim", "jad"];
+    var studentList = document.querySelector("#student-list");
+    for (var i = 0; i < studentsArray.length; i++){
+        var newList = document.createElement("li");
+    newList.innerText = studentsArray[i];
+    studentList.appendChild(newList);
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body {
+    background-color: bisque;
+}
+#mainimage{
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+#backgroundE {
+    background-color: gainsboro;
+    margin: auto;
+}
+#backgroundP {
+    background-color: gray;
+    margin: auto;
+}
+
+#color1 {
+    color: darkcyan;
+}
+#color2 {
+    color: midnightblue;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+.qb {
+    background-color: aqua;
+    color: brown;
+    border: 1px dotted black;
+}
+.rb {
+    background-color: yellowgreen;
+    color: blue;
+    border: 1px dashed black;
+}
+.cb {
+    background-color: lightblue;
+    color: blueviolet;
+    border: 1px dotted black;
+}
+.te {
+    background-color: lightgoldenrodyellow;
+    color: royalblue;
+    border: 1px dotted black;
+}
+.de {
+    background-color: burlywood;
+    color: violet;
+    border: 1px dotted black;
+}
+
+.lb {
+    background-color: lightsalmon;
+    color: darkgreen;
+    border: 1px dotted black;
+}
+
+.we {
+    background-color: lightcyan;
+    color: darkorange;
+    border: 1px dotted black;
+}
+#headshots {
+    display: inline;
+}

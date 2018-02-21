@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RetailSite</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Kranky" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chathura" rel="stylesheet">
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+  <div class = "top-space"><%= render "partials/navbar" %></div>
+  
+  <div class = "space"><%= yield %></div>
+
+  <%= render "partials/footer" %>    
+
+  </body>
+</html> 

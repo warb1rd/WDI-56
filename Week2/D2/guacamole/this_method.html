@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "red-button">Red</button>
+    <button id = "blue-button">Blue</button>
+
+    <script>
+    var redButton = document.querySelector("#red-button");
+    var blueButton = document.querySelector("#blue-button");
+
+    redButton.nickname = "the red skull";
+    blueButton.nickname = "blue beetle";
+
+    function logThis() {console.log(this)}
+    function logThisNickname() {console.log(this.nickname)}
+    
+    redButton.addEventListener("click", logThisNickname)
+    blueButton.addEventListener("click", logThisNickname)
+
+    </script>
+</body>
+</html>

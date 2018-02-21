@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <link href="/normalize.css" rel="stylesheet">
+  <style>
+    .round-image{
+       border-radius: 50%;}
+    header {
+      text-align: center;
+      background: url('https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/581cb563f5e2313c7cbb82a3/1478276456416/what-if-dc-let-marvel-help-develop-their-movies');
+      background-position: center;
+      background-size: cover;
+      color: white;}
+    a {
+      color: white;}
+    h1 {
+      font-size: 40px;
+      padding: 20px 0 0 0;}
+    img {
+      width:230px;
+      height:160px;
+      border:15px;
+      filter:grayscale(100%);
+      opacity: .9;
+      margin: 10px 0px 0px 0px;}
+    ul {
+      padding: 20px;
+      background: rgba(0,0,0,0.5);}
+    li {
+      display: inline;
+      padding: 0px 20px 0px 20px;}
+    article {
+      max-width: 500px;
+      padding: 20px;
+      margin: 0 auto;}
+  
+    @media (max-width: 500px) {
+      h2 {
+        font-size: 30px;
+        padding: 15px;}
+      li {
+        padding: 5px;
+        display: block;} }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <img src="https://78.media.tumblr.com/2f9d78b3be2ac27eee0b6578c71e23f4/tumblr_owyfzltP2y1wcgkc9o1_540.jpg" class="round-image" >
+    <h1>Mahima's Comic Blog</h1>
+    <ul>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Marvel universe</a></li>
+      <li><a href="#">DC universe</a></li>
+    </ul>
+  </header>
+  <article>
+    <h2>Why Batman is the most badass superhero ever</h2>
+    <p>Ok, so everybody knows Superman is the strongest superhero in the DC universe. But do you know who is the smartest? Batman, of course! He also cannot be mind controlled or 'possessed' easily. I'll give you 2 examples why I think he is the (Bat)man.
+<br></br> 1. In the Justice league series, when Mr.Destiny puts everyone to sleep, Batman resists his powers by humming a song in his head which distracts the bad guy. Eventually Batman overpowers the villian who becomes crazy and starts humming the song.
+<br></br> 2. While working with John Constantine Batman encounters 'shrouds', beings that deliver souls to hell. At one point he says 'boo' and the shrouds are startled. Batman scares ghosts! </p>
+  <button>Like</button>
+  </article>
+  <article>
+    <h2>Dads with the same name</h2>
+    <p>Batman and Superman's moms share the same nam, Martha! "Everyone knows that", you may say. But did you know that Batman's and Aquaman's dad shared the same name? Thomas Wayne and Thomas Curry!(not the Indian kind)</p>
+  <button>Like</button>
+  </article>
+  <script>
+    $("button").on("click", function() {
+      alert("Clicked!");});
+  </script>
+</body>

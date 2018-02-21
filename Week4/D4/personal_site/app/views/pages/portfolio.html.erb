@@ -1,0 +1,20 @@
+<h3><%= @title %></h3>
+<p><%=  %></p>
+<%# <ul> Project 1 - Game </ul>
+<ul>
+    <li class = "title_project"> SPACE INVADERS!
+        <li> It was fun to build.</li>
+        <li> Its almost a win-win kind of game.</li>
+        <li> It can be finished in less than 2 minutes!</li>
+        <li>If you want to play it can be accessed <a href = "https://warb1rd.github.io/Space_Invaders/">here</a></li>
+    </li> 
+</ul> %>
+    <div id = "portfolio">
+    <% @portfolio.each do|x| %>
+        <%= x[:title] %>
+        <%= x[:description] %>
+        <%= x[:link] %>
+    <% end %>
+
+    </div>
+

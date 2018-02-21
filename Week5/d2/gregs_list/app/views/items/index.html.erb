@@ -1,0 +1,12 @@
+<h1>Greggs List</h1>
+<h3>Find the 3 items you'll always need (during dark times)</h3>
+
+<ul>
+    <% @items.each do |i| %>
+    
+        <li><%= link_to(i.name,"/items/#{i.id}") %></li>
+
+    <% end %>
+    
+</ul>
+

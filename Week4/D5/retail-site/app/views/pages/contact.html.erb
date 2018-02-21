@@ -1,0 +1,27 @@
+
+<form>
+      <div class="container">
+          <input id="name" type="text" class="name-input" placeholder="Name">      
+          <input id="email" type="text" class="email-input" placeholder="Email?">
+          <input id="comments" type="text" class="comments-input" placeholder="Any comments?">
+          
+        </div>
+    <button type="submit" class="btn">SUBMIT</button>
+
+</form>
+
+<% @store_hours.each do |i| %>
+    <% if Time.now.strftime("%A") == i[:day]%>
+    
+        <ul class = "operation-hours">
+            <li> <%= i[:day] %> </li>
+            <li> <%= i[:open] %><span> <%= i[:close] + " *" %> </span></li>
+        </ul>
+
+   <% else %>
+        <ul class = "operation-hours">
+            <li> <%= i[:day]%> </li>
+            <li> <%= i[:open] %><span> <%= i[:close]%> </span></li>
+        </ul>
+    <% end %>
+<% end %>

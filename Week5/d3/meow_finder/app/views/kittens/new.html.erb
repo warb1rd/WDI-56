@@ -1,0 +1,10 @@
+<h1>New Kitten!</h1>
+
+<%= form_for(@kitten) do |f| %>         <%#building a form for a kitten so form_for(@kitten)%>
+    <%= f.text_field(:name, {placeholder:"Name"})  %>              <%# adds input into the form (ruby helper method)  %>
+    <%= f.text_field(:birthdate, {placeholder:"Birthdate"}) %>         <%#Cannot use @kitten.birthdate or @kitten.name because its currently nil since we just created a Kitten.new database with nothing to populate it yet. %>
+    <%= f.text_field(:image_url, {placeholder:"Image URL"}) %>
+
+    <%= f.submit("Add") %>
+<% end %>
+

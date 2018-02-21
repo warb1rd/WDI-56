@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+   <input id= "name-input" type="text">
+   <button id = "go-btn">Go</button>
+    
+   <script>
+       var $nameInput = $('#name-input');
+       var $goBtn = $('#go-btn');
+
+       function goHandler(){
+           console.log('You typed');
+           var theName = $nameInput.val();
+           console.log(theName);
+           console.log("now empty it");
+           $nameInput.val("")   
+       }
+
+    $goBtn.on("click", goHandler);
+   
+   </script>
+
+</body>
+</html>

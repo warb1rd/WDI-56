@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+</head>
+<body>
+    <button id ="stop-button">STOP</button>
+    <script>
+        function sayYes(p){
+            console.log("yes");
+        }
+    var timerId = setInterval(sayYes, 500)
+    
+    var stop = document.querySelector("#stop-button");
+    
+    function stopTimer(){
+        clearInterval(timerId)
+    }
+
+    stop.addEventListener("click", stopTimer)
+    
+    </script>
+</body>
+</html>

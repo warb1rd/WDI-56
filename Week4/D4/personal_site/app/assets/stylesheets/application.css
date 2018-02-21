@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #303030;
+    color: #00a86b;
+    max-width: 1600px;
+}
+
+ #navigation, #navigation li {
+    list-style: none;
+    display: inline;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 100px;  
+    padding: 10px 0 0 0;
+}
+
+ul {
+    list-style-type: square;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00a86b;
+}
+a {
+    color: #00a86b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#top-bar{
+    padding: 10px 0 10px 0;
+    box-shadow: 0 8px 6px -6px #4f4f4f;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    
+}
+
+.title_project {
+    list-style-type: none;
+    font-family: 'Courier New', Courier, monospace   
+}
+
+#portfolio {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;   
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace;    
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+    border: black solid .5;
+    background: rgba(0,0,0,0.5);
+    color: lightgrey;
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 20px;
+}
+
+.btn {
+    font-family: 'Courier New', Courier, monospace;
+    width: 120px;
+    height: 40px;
+    margin: 20px auto;
+    display: block;
+    font-size: 20px;
+    color: black;
+    background-color: #00a86b;
+    border: none;
+}
+
+#time-stamp{
+    position: absolute;
+    bottom: 5px;
+}

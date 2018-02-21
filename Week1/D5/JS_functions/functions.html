@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // var result = 0;
+    // var m = 7;
+    // var n = 4;
+    // var i = 0;
+        // while (i < n) {
+        // result = result + m;
+        // i++;
+    // }
+    // document.write(result); 
+    //output command like alert() or console.log() shows up in the document page.
+
+// INITIALS
+    // function initials(firstName, lastName) {
+        // var fn = firstName;
+        // var ln = lastName;
+        // var init = fn[0].toUpperCase() + ln[0].toUpperCase();
+        // return init
+    // }
+    // console.log(initials("mahima", "rao"));
+
+     function mul(a,b) {
+         var result = 0;
+         var m = a;
+         var n = b;
+         var i = 0;
+             while (i < n) {
+             result = result + m;
+             i++;
+         }
+     return result;
+     }
+     console.log(mul(15,3));
+
+     function lines(y) {
+        var x = y;
+        var result = "-";
+        for (var i = 0; i < x; i++) {
+            result = result + '\n' + "-";
+            }
+        return result;
+        return newR;
+    }
+    console.log(lines(5));
+
+    
+    //HOMEWORK function exp(base,expo) { - DO EXPONENTIAL}
+    function power(base,exponent) {
+         var results = 1;
+             for (var i = 1; i <= exponent; i++) {
+                    results = mul(results,base);
+             }
+            return results;
+    }
+    console.log(power(5,3));
+
+// PICTURE
+function picture(letter,size) {
+         var pict = "";
+         var m = letter;
+         var n = size;
+             for (var i = 0; i < n; i++) {
+                for(var j = 0; j < n; j++) {
+                pict = pict + m;  
+                }
+                pict = pict + '\n';
+             }
+        return pict;
+    }
+    console.log(picture("r",4)); 
+
+    // DO DIVISION
+        
+
+    </script>
+</body>
+</html>

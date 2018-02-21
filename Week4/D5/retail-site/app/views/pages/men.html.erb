@@ -1,0 +1,53 @@
+<h2> Men's Apparel & Shoes </h2>
+    <ul>
+    <p> Men's Tops </p>
+    <% @inventory.each do |i| %>
+       <% if i[:men_or_women] == "men" and i[:category] == "tops" %>
+        
+                <li class = "items"><%= i[:category] %></li>
+                <li class = "items"><%= i[:name] %></li>
+                <li class = "items"><%= i[:description] %></li>
+                <li class = "items"><%="$"%><%= i[:price] %></li>
+                <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                <li class = "items"><%= i[:vip] %></li>
+                <img class = "image" src= "<%= i[:image] %>" />
+                <span class = "qty">Quantity </span><input id = "quantity-input"> 
+                <button class = "add-button"><%= "Add to cart" %> </button>              
+            <% end %>
+        <% end %>
+    </ul>
+
+    <ul>
+        <p>Men's Bottoms</p>
+        <% @inventory.each do|i| %>
+                <% if i[:men_or_women] == "men" and i[:category] == "bottoms" %> 
+                    <li class = "items"><%= i[:category] %></li>
+                    <li class = "items"><%= i[:name] %></li>
+                    <li class = "items"><%= i[:description] %></li>
+                    <li class = "items"><%="$"%><%= i[:price] %></li>
+                    <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                    <li class = "items"><%= i[:vip] %></li>
+                    <img class = "image" src= "<%= i[:image] %>" />
+                    <span class = "qty">Quantity </span><input id = "quantity-input"> 
+                    <button class = "add-button"><%= "Add to cart" %> </button>
+                <% end %>
+        <% end %>
+    </ul>
+
+    <ul>        
+        <p>Men's Shoes</p>
+        <% @inventory.each do|i| %>
+        
+            <% if i[:category] == "shoes" %>
+                <li class = "items"><%= i[:category] %></li>
+                <li class = "items"><%= i[:name] %></li>
+                <li class = "items"><%= i[:description] %></li>
+                <li class = "items"><%= i[:price] %></li>
+                <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                <li class = "items"><%= i[:vip] %></li>
+                <img class = "image" src= "<%= i[:image] %>" />
+                <span class = "qty">Quantity </span><input id = "quantity-input"> 
+                <button class = "add-button"><%= "Add to cart" %> </button>
+            <% end %>
+        <% end %>
+    </ul>

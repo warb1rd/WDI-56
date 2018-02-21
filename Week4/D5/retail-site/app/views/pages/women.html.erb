@@ -1,0 +1,42 @@
+<h2> Women's Apparel & Shoes </h2>
+    <ul>
+    <% @inventory.each do |i| %>
+       <% if i[:men_or_women] == "women" %>
+        <li>
+            <ul>
+                <% if i[:category] == "tops" %>
+                    <p> Women's Tops </p>
+                    <li class = "items"><%= i[:category] %></li>
+                    <li class = "items"><%= i[:name] %></li>
+                    <li class = "items"><%= i[:description] %></li>
+                    <li class = "items"><%="$"%><%= i[:price] %></li>
+                    <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                    <li class = "items"><%= i[:vip] %></li>
+                    <img class = "image" src= "<%= i[:image] %>" />
+                <% elsif i[:category] == "bottoms" %> 
+                    <p> Women's Bottoms </p>
+                    <li class = "items"><%= i[:category] %></li>
+                    <li class = "items"><%= i[:name] %></li>
+                    <li class = "items"><%= i[:description] %></li>
+                    <li class = "items"><%="$"%><%= i[:price] %></li>
+                    <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                    <li class = "items"><%= i[:vip] %></li>
+                    <img class = "image" src= "<%= i[:image] %>" />
+                <% elsif i[:category] == "shoes" %>
+                    <p> Women's Shoes </p>
+                    <li class = "items"><%= i[:category] %></li>
+                    <li class = "items"><%= i[:name] %></li>
+                    <li class = "items"><%= i[:description] %></li>
+                    <li class = "items"><%="$"%><%= i[:price] %></li>
+                    <li class = "items"><%= i[:stock] %><%=" available"%></li>
+                    <li class = "items"><%= i[:vip] %></li>
+                    <img class = "image" src= "<%= i[:image] %>" />
+                <% end %>
+                <span class = "qty">Quantity </span><input id = "quantity-input">                
+                <button class = "add-button"><%= "Add to cart" %> </button>
+                
+            </ul>
+        </li>
+        <% end %>
+    <% end %>
+    </ul>

@@ -1,0 +1,8 @@
+<h1>KITTY CATS</h1>
+
+<ul>
+    <% @kittens.each do|k| %>
+        <li><%= link_to(k.name.upcase,"/kittens/#{k.id}") %> </li>     
+    <%end%>
+</ul>
+

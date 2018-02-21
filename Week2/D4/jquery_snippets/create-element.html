@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet</p>
+    <a href="http://altavista.com">search the web 2000 style</a>
+
+    <script>
+    var $body = $('body');
+
+    // create h2
+    var $subtitle = $('h2');
+
+    // add text to h2
+    $subtitle.text('this is the subtitle')
+
+    // append h2 to body
+    $body.append($subtitle);    
+    // create a h1
+    var $title = $('h1');
+
+    // add text to h1
+    $title.text('creating and appending elements');
+
+    // prepend the h1 to the body
+    $body.prepend($title)
+
+    var $littleSpan = $('<span>');
+    
+    $littleSpan.text("this is a span");
+    $title.append($littleSpan);
+
+
+    </script>
+</body>
+</html>

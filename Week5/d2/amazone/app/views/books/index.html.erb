@@ -1,0 +1,10 @@
+<h1>AMAZONE</h1>
+<h2>Best books, special price!</h2>
+
+
+<ul>
+<% @books.shuffle.each do |b| %>
+   
+    <li><%= link_to(b.title, "/books/#{b.id}") %></li> 
+    <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<h1><%= @title %></h1>
+<h2><%= @description %></h2>
+<%# 5 + 5 %>                    <%# can be today's date and time or recent users. If you want to show in every page, put in application.html.erb since its the grandparent of other files. %>                      
+
+<%= %>       <%#difference between = and no = %>                          
+<% %>       <%# evaluates ruby expression but doesnt print in browser %>
+
+<%#if user is logged in, show a button that only shows if logged in %>                          
+
+<% if @logged_in %>    <%# is true. change to false to not see the hidden buttons %>
+    <a>Edit</a>
+    <a>Delete</a>
+<% end %>
+
+                          
+<%# create array of projects in controller. %>

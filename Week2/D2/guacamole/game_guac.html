@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guac-Game</title>
+    <style>
+    .hole {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        display: inline-block;
+        max-width: 500px;
+        background-color: aliceblue;
+        vertical-align: top;
+        margin: 2px auto;
+    
+     }
+     #grid {
+        width: 330px;
+
+     }
+
+     #time-board{
+         color: black;
+     }
+    
+    </style>
+</head>
+<body>
+    <h1>Guacamole</h1>
+    <div id = "score-board">
+        <span id = "score-label">Score :</span>
+        <span id = "score-count">0</span>
+    </div>
+    <div id = "time-board">
+        <span id = "time-label">Time remaining :</span>
+        <span id = "time-count">20</span>
+    </div>
+
+    <div id = "grid">
+        <div class = "hole"></div>
+        <div class = "hole">M</div>
+        <div class = "hole"></div>
+        <div class = "hole"></div>
+        <div class = "hole"></div>
+        <div class = "hole"></div>
+        <div class = "hole"></div>
+        <div class = "hole"></div>
+        <div class = "hole"></div>
+                                        
+    </div>
+
+    <script>
+
+        var holes = document.querySelectorAll(".hole");
+        var scoreNum = document.querySelector("#score-count");
+        var score = 0;
+        var timeCount = document.querySelector("#time-count");
+
+        // var timer = setInterval(timerId, 1000);
+
+        // var timerId = setInterval(sayYes, 1000)
+
+        // var firstHole = holes[0];
+        // var secondHole = holes[1];
+        // var thirdHole = holes[2];
+        // var fourthHole = holes[3];
+        // var fifthHole = holes[4];
+        // var sixthHole = holes[5];
+        // var seventhHole = holes[6];
+        // var eighthHole = holes[7];
+        // var ninthHole = holes[8]; - instead, can use a for loop!
+           
+        
+        // var nextHole = 
+        alert("StartGame")
+        var moveTheMole = setInterval(moveMole, 100)
+        var timer = setInterval(startTimer, 100)
+
+        function randomInt(n){
+            return Math.floor(Math.random() * n)
+        }
+       
+        function startTimer(){
+            timeCount.innerText = timeCount.innerText*1 - 1;
+            if(timeCount.innerText*1 === 0){
+                stopTimer()
+                stopMole()
+                alert("GameOver!")
+            }
+        }
+
+        function stopTimer(){
+            clearInterval(timer)
+        } 
+
+        function moveMole(){
+            for (var i = 0; i < holes.length; i++) {
+                holes[i].innerHTML = "";
+            }  holes[randomInt(9)].innerHTML = "M";
+        } 
+
+        function stopMole(){
+            for(var i = 0; i < holes.length; i++){
+                holes[i].innerText = ""
+            }
+            if(timeCount === 0){
+            clearInterval(moveTheMole);
+            }
+        }
+        
+        // stop.addEventListener("click", stopTimer);
+      
+       
+        function moleClicked(){
+            if(this.innerHTML === ""){
+                console.log("mole not here!")
+                score = score - 1
+            } else {
+                console.log("GUACEDAMOLE")
+                this.innerHTML = ""                 // the html "m" disappears once it is set to empty ""
+                var nextHole = holes[randomInt(9)];
+                nextHole.innerHTML = "M";
+                score = score + 1
+            } scoreNum.innerHTML = score;
+        }
+
+        for(var i = 0; i < holes.length; i++){
+            holes[i].addEventListener("click", moleClicked)   
+        }               
+                                
+        
+    </script>
+</body>
+</html>
