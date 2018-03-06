@@ -1,0 +1,7 @@
+<h2>Add a new quote </h2>
+
+<%= form_for(@quote) do |q| %>                                    
+    <%= q.text_field(:body, {placeholder:"Quote"})  %>              
+    <%= q.text_field(:author, {placeholder:"Author"}) %>     
+    <%= q.submit("Add") %>
+<% end %>

@@ -1,2 +1,11 @@
 <h1><%= @kitten.name %></h1>
+<h3>Age: <%= time_ago_in_words(@kitten.birthdate) %></h3>
 <%= image_tag(@kitten.image_url)%>
+
+<ul>
+
+    <li><%= link_to("EDIT KITTEN", "/kittens/#{@kitten.id}/edit")%></li>
+    <li><%= link_to("BACK TO KITTENS", "/kittens")%></li>
+    <li><%= link_to("ADOPT KITTEN", "/kittens/#{@kitten.id}", {method: "delete", data: {confirm:"You sure?"}})%></li>    
+    
+</ul>

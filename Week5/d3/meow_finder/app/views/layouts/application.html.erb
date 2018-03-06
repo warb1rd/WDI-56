@@ -9,7 +9,13 @@
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to("HOME","/") %></li>
+      <li><%= link_to("ADD NEW KITTY","/kittens/new") %></li>      
+    </ul>
+
     <%= yield %>
-    <%= params %>
+    <%# params %>                                 <%#Good debugging tool that shows up on each page%>
+
   </body>
 </html>

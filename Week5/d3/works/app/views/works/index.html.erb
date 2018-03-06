@@ -1,0 +1,8 @@
+<h2>Famous Quotes</h2>
+
+<ul>
+<% @quotes.each do|q|%>
+    <p><%= link_to(q.body,"/works/#{q.id}") %> by <span> <%= q.author %> </span></p>
+<% end %>
+</ul>
+

@@ -1,0 +1,10 @@
+<h2>All dweeds</h2>
+
+<ul>
+    <% @dweeds.each do |d|%>
+        <li>
+        <%= d.body %> by <%= d.user.username %> 
+        <%= link_to("DELETE DWEED", "/dweeds/#{d.id}", {method: "delete", data: {confirm:"You sure?"}}) %></li>
+    <% end %>
+
+</ul>

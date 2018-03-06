@@ -1,0 +1,5 @@
+<h1>Post a dweed</h1>
+<%= form_for(@dweed, url: "/users/#{@user.id}/dweeds") do |f|%>     <%# sends a post requset to the url mentioned.%>
+    <%= f.text_field(:body, {placeholder: "Dweed..."})%>
+    <%= f.submit %>
+<% end %>

@@ -1,2 +1,9 @@
-<h1>Kittens#edit</h1>
-<p>Find me in app/views/kittens/edit.html.erb</p>
+<h1>Edit kitten</h1>
+
+<%= form_for(@kitten) do |f| %>                                    <%#building a form for a kitten so form_for(@kitten)%>
+    <%= f.text_field(:name, {placeholder:"Name"})  %>              <%# adds input into the form (ruby helper method)  %>
+    <%= f.text_field(:birthdate, {placeholder:"Birthdate"}) %>     
+    <%= f.text_field(:image_url, {placeholder:"Image URL"}) %>     <%# can put radio buttons checkmarks etc %>
+    
+    <%= f.submit("Update kitten") %>
+<% end %>

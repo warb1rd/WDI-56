@@ -1,0 +1,17 @@
+<h2>Awesome Movies</h2>
+<ul>
+    <% @movies.each do |m| %>
+        <div class="card" style="width: 18rem;">
+
+        <%= image_tag(m.image,class:"card-img-top") %>
+            <div class="card-body">
+                <h5 class="card-title"><%=m.title%></h5>
+                <p class="card-text"><%=m.tagline%></p>
+                <%= link_to "SHOW", "/movies/#{m.id}" , class: "btn btn-secondary" %>
+            </div>
+        </div>
+    <% end %>
+</ul>
+  
+  <%= link_to "New", "/" , class: "btn btn-secondary" %>
+

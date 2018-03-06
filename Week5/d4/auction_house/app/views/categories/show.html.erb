@@ -1,0 +1,10 @@
+<h1><%=@category.name%> items </h1>
+
+<ul>
+    <% @category.items.each do |i|%>
+
+        <p><%= link_to(i.name, "/items/#{i.id}") %></p>
+
+    <% end %>
+
+</ul>

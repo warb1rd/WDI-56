@@ -1,0 +1,14 @@
+{
+  "name": "npm-playground",
+  "version": "1.0.0",
+  "description": "A place to play with npm",
+  "main": "npm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahima",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.3.2"
+  }
+}

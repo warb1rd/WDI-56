@@ -1,0 +1,4 @@
+<h2><%= @quote.author %></h2>
+<p><%= @quote.body %></p>
+<p><%= link_to("EDIT QUOTE", "/works/#{@quote.id}/edit")%></p>
+<p><%= link_to("DELETE QUOTE", "/works/#{@quote.id}", {method: "delete", data: {confirm:"You sure?"}})%></p>

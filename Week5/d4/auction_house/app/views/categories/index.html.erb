@@ -1,0 +1,11 @@
+<h1>Categories</h1>
+
+<ul>
+     <% @categories.each do |i|%>
+        
+        <p><%= link_to(i.name, "/categories/#{i.id}") %></p>
+
+    <% end %>
+
+</ul>
+

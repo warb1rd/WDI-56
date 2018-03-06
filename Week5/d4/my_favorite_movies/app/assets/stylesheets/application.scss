@@ -1,0 +1,24 @@
+@import "bootstrap";
+
+ a {
+    color: blue;
+ }
+
+
+ .col-3 {
+    background-color: lightgreen;
+    min-height: 100vh; //viewport height
+ }
+
+
+ .card {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+    height: 600px;
+
+ }
+
+ .card-body{
+     
+ }

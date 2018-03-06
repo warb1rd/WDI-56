@@ -1,0 +1,8 @@
+<h2> Add New Items </h2>
+
+<%= form_for(@item, url: "/categories/#{@category.id}/items") do |i|%>    
+    <%= i.text_field(:name, {placeholder: "Item..."})%>
+    <%= i.text_field(:artist, {placeholder: "Artist..."})%>    
+    <%= i.submit %>
+
+<% end %>
