@@ -1,4 +1,5 @@
 # Factorial
+# using - condition ? if_true : if_false
 
 # def first_factorial(n)
 #     n > 1 ?  n * first_factorial( n - 1 ) : 1

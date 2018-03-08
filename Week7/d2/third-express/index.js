@@ -22,6 +22,6 @@ app.get("/contact", function(req, res){
     res.send(`<p>${firstName} ${lastName} ${phone} ${email}</p><p> Get in touch!</p>`)
 })
 
-app.listen(PORT, function(err){
+app.listen(PORT, function(err){ 
     console.log(`The server is running on ${PORT}`)
 })

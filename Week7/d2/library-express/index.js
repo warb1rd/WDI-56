@@ -22,13 +22,11 @@ app.post("/books/:name/:author", function(req, res){
     })
     res.send(books)
 })
-
 // app.get("/books/:name", function(req, res){
 //     res.send(req.params.name)
 // })
 
-app.delete("/books/:name", function(req, res){
-    
+app.delete("/books/:name", function(req, res){   
     // req.params.name = null
     // req.params.author = null
     var bookIndex = 1
@@ -41,10 +39,18 @@ app.delete("/books/:name", function(req, res){
     res.send(books)
 })
 
+app.patch("/books/:name/:new_name", function(req, res){
+
+    books.forEach((book) => {
+        if(book.name === req.params.name) {
+            book.name = req.params.new_name
+        }
+    })
+    res.send(books)
+})
+
+
 app.listen(PORT, function(err){
     console.log(`Server started on port: ${PORT}`)
 })
 
-const add = () => {
-    
-}
