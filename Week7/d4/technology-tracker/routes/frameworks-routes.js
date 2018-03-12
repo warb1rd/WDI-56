@@ -9,6 +9,7 @@ frameworksRouter.route("/")
 .post(frameworkCtrl.create)
 
 frameworksRouter.route("/:id")
+
 .get(frameworkCtrl.show)
 .patch(frameworkCtrl.update)
 .delete(frameworkCtrl.destroy)

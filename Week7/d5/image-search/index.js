@@ -4,8 +4,6 @@ const axios = require("axios")
 const httpClient = axios.create()
 const PORT = 3000
 
-//API KEY: QAPRLt2ptKdeyTlM1jlFm234rZMv2CQB                                                                                  // Never put access key inside the code. 
-
 // https://api.giphy.com/v1/gifs/random?api_key=QAPRLt2ptKdeyTlM1jlFm234rZMv2CQB&tag=&rating=G                               //Query params{api_key:sdfadfadsf, tag=null, rating: G}
 
 //SEARCH TERM
@@ -41,8 +39,8 @@ app.get("/stickers/:term", (req, res) => {
         console.log(apiResponse.data.data[0].images.original.url)
             var results =  ""
             const allImages = apiResponse.data.data 
-            allImages.forEach((image) => {                                                  //i is each element in an array
-                const currentImageUrl = image.images.original.url
+            allImages.forEach((i) => {                                                  //i is each element in an array
+                const currentImageUrl = i.images.original.url
                 results += `<img src = "${currentImageUrl}" />`
             })          
             res.send(results)

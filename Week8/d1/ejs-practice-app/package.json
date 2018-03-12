@@ -1,16 +1,14 @@
 {
-  "name": "github",
+  "name": "ejs-practice-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Mahima",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
-    "dotenv": "^5.0.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1"

@@ -1,0 +1,7 @@
+<h1><%= joke.author %></h1>
+<p><%= joke.setUp %></p>
+<p><%= joke.punchLine %></p>
+<button><a href="/jokes/<%= joke._id %>/edit">EDIT JOKE</a></button>
+<form  method="POST" action= "/jokes/<%= joke._id %>?_method=DELETE">
+<button>DESTROY JOKE!</button>
+</form>

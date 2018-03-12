@@ -1,0 +1,10 @@
+<h2>Add New Joke</h2>
+ 
+<form method = "POST" action="/jokes/<%=joke._id%>?_method=PATCH">
+    <input type="text" name="author" value = "<%= joke.author %>" placeholder ="Author"/>                           <!--To prepopulate the form, use value attribute-->
+    <input type="text" name="setUp" value="<%= joke.setUp %>" placeholder ="Setup"/>
+    <input type="text" name="punchLine" value="<%= joke.punchLine %>" placeholder ="Punchline"/>
+    <button>Done</button>    
+
+</form>
+    
