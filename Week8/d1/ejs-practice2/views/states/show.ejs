@@ -1,0 +1,9 @@
+<h1><%= state.state %></h1>
+<p><%= state.capital %></p>
+<p><%= state.knownFor %></p>
+<button><a href="/states/<%= state._id %>/edit">EDIT state</a></button>
+<form  method="POST" action= "/states/<%= state._id %>?_method=DELETE">
+<button>DESTROY state!</button>
+</form>
+
+

@@ -1,0 +1,12 @@
+<h1>Number of states: <%= states.length %></h1>
+<ul style="list-style: none">
+    <%states.forEach((s) => {%> 
+        <div class="container">
+            <a href="/states/<%= s._id%>" class="list-group-item"><%= s.state%></a>                                                
+        </div> 
+    <%})%>
+    
+</ul>
+
+
+  

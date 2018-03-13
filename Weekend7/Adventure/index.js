@@ -18,15 +18,15 @@ app.get("/users/:username", (req, res) => {
 
     httpClient(options).then((apiResponse, err) => {
         console.log(apiResponse.data.data)
-        let user = apiResponse.data;
+        let user = apiResponse.data.data;
         // console.log(user);
-        var name = apiResponse.data.first_name
-        var image = apiResponse.data.image['60x60']
+        var name = apiResponse.data.data.first_name
+        var image = apiResponse.data.data.image['60x60'].url
         var results = `
                     <style>
                     body{
                         background-color: black;
-                        color: golden-rod
+                        color: white;
                     }
                     div{
                         margin: 0 auto;
