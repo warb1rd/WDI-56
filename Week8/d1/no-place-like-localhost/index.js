@@ -16,6 +16,7 @@ const
     app.set("views", `${__dirname}/views`)                                                                  // app.set creates an option for app. Use this directory as my views folder. Setting view to views folder.// In this directory, look for a folder called views a set it as views
     app.set("view engine", "ejs")                                                                           // Set our view engine as ejs. Any views in the views directory are ejs files.
     
+    app.use(express.static(`${__dirname}/public`))
     app.use(ejsLayouts)                                                                                     // 
     app.use(logger("dev"))
     app.use(bodyParser.json())

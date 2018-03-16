@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Socket IO Practice</title>
+</head>
+<body>
+    <h1>Socket IO</h1>
+    <input id="message-input" type="text" placeholder="Message">
+    <input id="user-input" type="text" placeholder="User">
+    <button id="send-btn">Send Message</button>
+
+    <ul id="message-output" style = "list-style: none">
+
+    </ul>
+    
+    <script>
+        var socket = io()
+        var $btn = $("#send-btn")
+        var $messageInput = $("#message-input")
+        var $p = $("#message-output")
+        var $userInput = $("#user-input")
+
+        $btn.on("click", () => {
+            console.log("message being sent")
+            socket.emit("new-message", {body: $messageInput.val(), username: $userInput.val()})
+            $messageInput.val("")
+        })
+      
+        socket.on("broadcast", (message) => {                              
+            $p.append(`<li>${message.username} says ${message.body} </li>`)
+        })
+
+        socket.on("new-user-connection", (data) => {                        //Whatever the data that server sent down
+            console.log("A new player just joined")
+            console.log(data)
+
+        })
+ //When socket.io was sourced in, it came with io() function
+    </script>
+</body>
+</html>

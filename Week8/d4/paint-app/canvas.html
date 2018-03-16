@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #paint {
+        height: 500px;
+        width: 500px;
+        border: 1px solid #444;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+  	<div id="paint">
+  		<canvas id="myCanvas"></canvas>                                 <!-- -->
+    </div>
+    <script>
+
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      var mouse = {x: 0, y: 0};                                             // x and y coordinates
+      var painting = document.getElementById('paint');
+      var paint_style = getComputedStyle(painting);
+      var socket = io()
+
+      canvas.width = parseInt(paint_style.getPropertyValue('width'));
+      canvas.height = parseInt(paint_style.getPropertyValue('height'));
+
+      canvas.addEventListener('mousemove', function(e) {                    // Everytime we're over canvas, x and y change
+        mouse.x = e.pageX - this.offsetLeft;                                 
+        mouse.y = e.pageY - this.offsetTop;
+      }, false);
+
+      ctx.lineWidth = 3;
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#00CC99';
+      
+      canvas.addEventListener('mousedown', function(e) {
+          ctx.beginPath();
+          ctx.moveTo(mouse.x, mouse.y);
+        
+          canvas.addEventListener('mousemove', onPaint);                    // On mouse down, its running onPaint function
+      }, false);
+      
+      canvas.addEventListener('mouseup', function() {
+          canvas.removeEventListener('mousemove', onPaint);
+      }, false);
+ 
+      var onPaint = function() {
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+      };
+
+
+
+      $btn.on("click", () => {
+        console.log("message being sent")
+        socket.emit("new-message", {body: $messageInput.val(), username: $userInput.val()})
+        $messageInput.val("")
+    })
+  
+    socket.on("broadcast", (message) => {                              
+        $p.append(`<li>${message.username} says ${message.body} </li>`)
+    })
+
+    socket.on("new-user-connection", (data) => {                        //Whatever the data that server sent down
+        console.log("A new player just joined")
+        console.log(data)
+
+    })
+      
+    </script>
+  </body>
+</html>  

@@ -1,0 +1,54 @@
+#search-container{
+    width: max-content;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1{
+    width: max-content;
+    margin: 0 auto;    
+}
+
+#search-btn{
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid black;
+    height: 30px;
+    background-color: rgb(56, 125, 194);
+    color: whitesmoke;
+    font-size: 15px;
+}
+
+#search-input {
+    font-family: 'Courier New', Courier, monospace;
+    height: 30px;
+    font-size: 15px;
+}
+
+#weather-info{
+    background-color: rgb(56, 125, 194);
+   
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#main-container {
+    width: max-content;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 15px;
+
+}
+
+#city-name, #city-temperature, #city-humidity{
+    width: max-content;
+    margin: 0 auto;
+    padding: 10px;
+}
+#weather-icon{
+    width: max-content;
+    margin: 0 auto;
+    align-content: center;
+}
+

@@ -1,8 +1,7 @@
 <h1>Number of jokes: <%= jokes.length %></h1>
-<ul>
+<ul style="list-style: none">
     <%jokes.forEach((j) => {%>                                                   <!--arguement for this callback functions represent each induvidual joke (j) -->
        <li><a href="/jokes/<%= j._id%>"><%=j.setUp%></a></li>
-        <li><a href="/jokes/<%= j._id%>"><%=j.punchLine%></a></li>
     <%})%>
     
 </ul>

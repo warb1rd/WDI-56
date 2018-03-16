@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>                   <!--cdn that allows us to use axios from browser-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Weather App</title>
+</head>
+<body>
+    
+    <div id = "main-container">
+    <h1>THE WEATHER APP</h1>
+        <div id = "search-container">
+            <input id = "search-input" type="text" placeholder="Search city.."/> 
+            <button id="search-btn">Search</button>
+        </div>
+        <div id = "weather-info">
+            <img id = "weather-icon"/>
+            <h4 id= "city-name"></h4>
+            <h5 id = "city-temperature"></h5>
+            <h5 id = "city-humidity"></h5>
+        </div>
+    </div>
+    <script src="/js/main.js"></script>                                                  <!--When dealing with a static link, give absolute paths-->
+</body>
+</html>
+
