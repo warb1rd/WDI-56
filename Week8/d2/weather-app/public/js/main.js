@@ -10,7 +10,7 @@ var httpClient = axios.create()
 
 $searchBtn.on("click", () => {                              //When we click the button, it runs a function
     const city = $searchInput.val()                         //We're going to get the input val using val() method
-    const options = {url: `/weather/${city}`}            // Sending a request to my weather route with city from input field
+    const options = {url: `/weather/${city}`}               // Sending a request to my weather route with city from input field
     httpClient(options).then((serverResponse) => {          //We're contacting our server so data is the server response data.
         console.log(serverResponse.data)                    // If we don't add data, it'll return all the responses.
         $cityName.text(serverResponse.data.name)

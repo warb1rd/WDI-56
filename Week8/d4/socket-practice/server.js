@@ -10,13 +10,10 @@ app.get("/", (req, res) => {
 // SETTING CENTER HUB WHERE MULTIPLE CLIENTS CAN CONNECT TOGETHER
 io.on("connection", (socket) => {                                                   //
     console.log("A new client has connected")
-    io.emit("new-user-connection", {boom: "BANANA"} )                           //Second arguement can be an object with many key valie pairs
+    io.emit("new-user-connection", {boom: "BANANA"} )                               //Second arguement can be an object with many key valie pairs
     socket.on("new-message", (message) => {
-        io.emit("broadcast", message)                                           // Whenever emitting, give name and data associated with the message
+        io.emit("broadcast", message)                                               // Whenever emitting, give name and data associated with the message
     })
-
-
-    
 })
 
 // Goal is to let server detect a tcp connection
