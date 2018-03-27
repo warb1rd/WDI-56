@@ -6,3 +6,9 @@ In Terminal
 `npm start`
 
 In index.js inside src folder
+
+`import React from "react"  `                                                     
+`import ReactDOM from "react-dom"`  
+`import App from "./App.js"`
+
+const rootDiv = document.querySelector("#root")                                 //Can use document.getElementById()

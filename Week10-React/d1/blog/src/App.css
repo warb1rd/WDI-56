@@ -1,0 +1,16 @@
+body {
+    background-color: darkcyan;
+}
+
+.NavBar, .NavBar li {
+    list-style: none;
+}
+
+.NavBar li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.PostsContainer{
+    margin-left: 50px;
+}

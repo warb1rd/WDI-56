@@ -1,0 +1,14 @@
+
+.abandoned{
+  float: left;
+  /* clear: both; */
+  border: 1px solid black;
+  margin-left: 50px;
+}
+
+.adopted{
+  float: right;
+  border: 1px solid black;
+  margin-right: 50px;
+  
+}

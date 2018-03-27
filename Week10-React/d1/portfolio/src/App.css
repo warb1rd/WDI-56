@@ -1,0 +1,30 @@
+img{
+    width: auto;
+    height: 180px;
+    float: left;
+    clear: both;
+}
+
+.portfolioItem{
+    float: left;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    background: lightslategray;
+    width: auto;
+}
+
+body{
+    max-width: max-content;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+
+p{
+    min-width: 100%;
+    padding: 0;
+}
+
+.portfolioItem{
+    min-width: 100%;
+    margin: 10px, 0, 10px;
+}
