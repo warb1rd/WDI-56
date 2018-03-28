@@ -5,7 +5,7 @@ import Buttons from "./Buttons.js";
 class Counter extends React.Component { 
    
     constructor(){
-        super()                             
+        super()                                                         //Super allows us to use components
         this.state = {                                                  //Its the property of the app.
             count: 0                                                    //THE ONLY TIME WE CAN DECLARE STATE IS IN CONSTRUCTOR of a component
         }                                                               //State can only be modified using this.setState

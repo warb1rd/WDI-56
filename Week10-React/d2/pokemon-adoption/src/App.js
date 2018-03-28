@@ -22,17 +22,17 @@ class App extends Component {
 adoptPokemon(pokemon) {
   this.setState({                                             
     abandoned: this.state.abandoned.filter((p)=> {
-      return p._id !== pokemon._id                                                  //If this returns truthy value, it will not add it to the adopted array
-    }),                                                                             //.filter will match 
-    adopted: [...this.state.adopted, pokemon]                                       // second argument for the spread is the pokemon we want to add
+      return p._id !== pokemon._id                                                      //If this returns truthy value, it will not add it to the adopted array
+    }),                                                                                 //.filter will match 
+    adopted: [...this.state.adopted, pokemon]                                           // second argument for the spread is the pokemon we want to add
   }) 
 }
 
 abandonPokemon(pokemon) {
   this.setState({                                             
     adopted: this.state.adopted.filter((p)=> {
-      return p._id !== pokemon._id                                                  //If this returns truthy value, it will not add it to the adopted array
-    }),                                                                             //.filter will match 
+      return p._id !== pokemon._id                                                      //If this returns truthy value, it will not add it to the adopted array
+    }),                                                                                 //.filter will match 
     abandoned: [...this.state.abandoned, pokemon]                                       // second argument for the spread is the pokemon we want to add
   }) 
 }
@@ -43,7 +43,7 @@ abandonPokemon(pokemon) {
       <div className="abandoned">
       <h2>Abandoned Pokemon:{this.state.abandoned.length}</h2>
   
-      {this.state.abandoned.map((p)=>{                                              //p is this.state.abandoned
+      {this.state.abandoned.map((p)=>{                                                  //p is this.state.abandoned
         return( 
           <div key={p._id} >
             <img onClick={()=> {this.adoptPokemon(p)}} src={p.imageUrl} alt={p.name}/>
@@ -56,7 +56,7 @@ abandonPokemon(pokemon) {
 
       <div className="adopted">
       <h2>Adopted Pokemon:{this.state.adopted.length}</h2>
-      {this.state.adopted.map((p)=>{                                    //p is this.state.abandoned
+      {this.state.adopted.map((p)=>{                                                    //p is this.state.abandoned
         return( 
           <div key={p._id} >
             <img onClick={()=> {this.abandonPokemon(p)}} src={p.imageUrl} alt={p.name}/>
@@ -71,3 +71,6 @@ abandonPokemon(pokemon) {
 }
 
 export default App;
+
+
+

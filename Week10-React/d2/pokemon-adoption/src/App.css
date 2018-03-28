@@ -4,6 +4,7 @@
   /* clear: both; */
   border: 1px solid black;
   margin-left: 50px;
+  
 }
 
 .adopted{
@@ -11,4 +12,8 @@
   border: 1px solid black;
   margin-right: 50px;
   
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
