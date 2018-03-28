@@ -5,7 +5,7 @@ class Modal extends React.Component {
     componentDidMount(){                                                            //Inbuilt call back function. Mounted = read by react. Runs once when component finishes loading first time.
         const props = this.props        
         console.log("Modal has mounted")                                            //It's a lifecycle method. Good time to do ajax request to get data
-        // setTimeout(props.onClose, 1000)                                             //Useful for temporary flash messages.  Modal closes itself.
+        setTimeout(props.onClose, 5000)                                             //Useful for temporary flash messages.  Modal closes itself.
     }
     
     componentWillUnmount(){

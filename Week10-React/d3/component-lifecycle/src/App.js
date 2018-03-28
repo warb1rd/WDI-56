@@ -47,7 +47,7 @@ class App extends Component {
         <Modal 
         onClose={this.handleHideModalClick.bind(this)}
         modalTitle={this.state.secondsOpen}
-        modalBody={myBody}
+        modalBody={myBody}                                                                    // al the attributes for the modal are props that are being called in index.js
         />                                                                                    /*Conditionally show the modal without using if statements (cannot use if inside return) */
         )}
       </div>
