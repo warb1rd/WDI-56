@@ -4,6 +4,7 @@ import Modal from './Modal'
 
 
 
+
 class App extends Component {
   constructor(){
     super()
@@ -31,29 +32,26 @@ class App extends Component {
   }
 
   selectHero(hero){                                                                                   //hero is the h in map
-    console.log(hero)
     this.setState({
       showModal: true,
       hero: hero
     })
   }
 
-  hideModalClick(){
-    setTimeout(()=>{
-      this.setState({
-        showModal: false,    
-        modalClass: "exiting"
-      })
-    })
+  hideModalClick(){ 
+        setTimeout(()=> {
+          this.setState({
+            showModal: false,
+            modalClass: "exiting"
+          })
+        })
   }
 
   render() {
     return (
-    
       <div className="App">
       <h2>HEROES</h2>
-     
-      {this.state.heroes.map((h) => {                                            
+       {this.state.heroes.map((h) => {                                            
           return(
             <div key={h._id} >
               <p onClick={()=> {this.selectHero(h)}}>{h.name} </p>
@@ -61,13 +59,13 @@ class App extends Component {
             </div>
           )
         })}
-        
-
+    
       {this.state.showModal && (
-        <Modal                                                                                      //Only want to show model if state says to.
+        <Modal                                                                                       //Only want to show model if state says to.
         modalTitle={this.state.hero.name}           
         modalBody={this.state.hero.about}
         onClose={this.hideModalClick.bind(this)}                                                    //hideModalClick is not a part of state so no this.state.hide....
+       
         />
       )}
       </div>

@@ -1,14 +1,6 @@
 import React from 'react'
 import './Modal.css'
 
-/*
-  <Modal
-    modalTitle={String}
-    modalBody={String}
-    onClose={Function}
-  />
-*/
-
 class Modal extends React.Component {
 
   constructor() {
@@ -29,15 +21,20 @@ class Modal extends React.Component {
       })
     })
   }
+
   componentWillUnmount() {
     // remove escape key listener before modal unmounts
-    document.removeEventListener('keyup', this.handleEscKey)
+
+    this.setState({
+      modalClass: "exiting"
+    })
+    
   }
 
   render() {
     const props = this.props
     return (
-      <div className={`Modal ${this.state.modalClass} ${props.modalClass}`}>
+      <div className={`Modal ${this.state.modalClass}`}>
         <div className="container">
           <button onClick={props.onClose}>X</button>
           <div className="title">
@@ -53,3 +50,5 @@ class Modal extends React.Component {
 }
 
 export default Modal
+
+// ${props.modalClass}

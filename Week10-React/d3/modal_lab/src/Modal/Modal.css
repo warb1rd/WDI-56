@@ -7,7 +7,6 @@
   height: 100%;
   background: rgba(0, 0, 0, .5);
   opacity: 0;
-  transition: opacity 1s;
 
 }
 
@@ -22,11 +21,14 @@
 
 .Modal.entered {
   opacity: 1;
+  transition: opacity 2s;
+
 }
 
 .Modal.exiting {
+  /* visibility: hidden; */
   opacity: 0;
-  /* transition: opacity 1s; */
+  transition: opacity 1s;
 }
 
 /* opacity will gradually go from 0(initial value) to 1 over .5 sec */
