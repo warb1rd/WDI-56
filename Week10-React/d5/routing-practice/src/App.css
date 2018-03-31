@@ -27,12 +27,4 @@
   to { transform: rotate(360deg); }
 }
 
-img {
-  /* max-width: 150px; */
-}
 
-.contain{
-  border: 1px solid black;
-  padding: 5px;
-  margin-bottom: 10px;
-}

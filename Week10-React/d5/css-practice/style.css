@@ -1,0 +1,10 @@
+.col {
+    background: dodgerblue;
+}
+*{
+    border: 1px solid black;
+}
+
+.vertical{
+    height: 100vh;
+}

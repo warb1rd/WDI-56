@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import httpClient from './httpClient.js';
 import UserItem from './UserItem.js';
+import './App.css'
 import _ from 'lodash';
-import { Container, Row, Col, Button, Form, FormGroup, Input } from 'reactstrap';
-
-
+import {Container, 
+        Row, 
+        Col, 
+        Button, 
+        Form, 
+        FormGroup, 
+        Input } from 'reactstrap';
+import NavBar from './NavBar.js'
 
 class App extends Component {
   state = {
@@ -32,7 +38,6 @@ class App extends Component {
     httpClient.addUsers(newUser).then((apiResponse) => {                                                            //return statement in httpClient.js addUsers, allows us to use.then.  The newUser arguement is the fields in httpClient.addUser(fields)
       const {data} = apiResponse
       if(data.success){
-        console.log(data)
         this.setState({
           users: [data.user, ...this.state.users]
           })
@@ -45,9 +50,7 @@ class App extends Component {
   } 
 
   handleDelete(user){
-    console.log(user)
     httpClient.deleteUser(user).then((apiResponse) => {
-      console.log(apiResponse)
       this.setState({
         users: this.state.users.filter((u) => {
               return u._id !== user._id  
@@ -66,12 +69,13 @@ class App extends Component {
     // }
     // console.log(arrays)
     const userRows = _.chunk(this.state.users, 4)
-    console.log(userRows)
+    
     return (
       <Container className="App">
+      <NavBar />
        <Form className="contain" inline onSubmit={this.handleSubmit.bind(this)}>
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0" >
-          <Input innerRef="name" ref="name" type="text" name="name" id="exampleEmail" placeholder="Name" />
+          <Input innerRef="name" ref="name" type="text" name="name" id="exampleEmail" placeholder="Name" />           {/*need to add innerRef for bootstrap forms*/}
         </FormGroup>
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
           <Input innerRef="email" ref="email" type="text" id="examplePassword" placeholder="Email" />
@@ -82,7 +86,7 @@ class App extends Component {
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
           <Input innerRef="bio" ref="bio" type="text" id="examplePassword" placeholder="Bio" />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button color="danger">Submit</Button>
       </Form>
       
        <div>
@@ -90,7 +94,7 @@ class App extends Component {
            return (                                                                                                 //for each row in our userRows array, we'll return something
            <Row key={index}>
               {row.map((u) => {
-                return <Col sm="3" key={u._id}><UserItem user={u} handleDelete={this.handleDelete.bind(this)}/></Col>
+                return <Col sm="3" key={u._id}><UserItem user={u} handleDelete={this.handleDelete.bind(this)}/></Col>      //UserItem has a prop called handleDelete which can be now used in UserItem file
               })}
            </Row>  
            )
@@ -112,3 +116,6 @@ export default App;
         <input ref="bio" type="text" placeholder="Bio"/>
         <button>ADD</button>
       </form> */
+
+
+      // **return <Col sm="3" key={u._id}><UserItem user={u} handleDelete={this.handleDelete.bind(this, u._id)}/></Col>      //UserItem has a prop called handleDelete which can be now used in UserItem file
