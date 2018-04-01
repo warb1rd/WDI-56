@@ -30,7 +30,7 @@ class App extends Component {
             <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
              <Collapse isOpen={!this.state.collapsed} navbar>
-              <Nav navbar>
+              <Nav className="" navbar>
               <NavItem>
                   <NavLink tag={RouterNavLink} to="/contact">CONTACT</NavLink>
                 </NavItem>

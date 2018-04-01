@@ -13,7 +13,7 @@ const
         console.log(err || "Connected to MongoDB")
     })
 
-    // app.set("views", `${__dirname}/views`)                                                                  // app.set creates an option for app. Use this directory as my views folder. Setting view to views folder.// In this directory, look for a folder called views a set it as views
+    app.set("views", `${__dirname}/views`)                                                                  // app.set creates an option for app. Use this directory as my views folder. Setting view to views folder.// In this directory, look for a folder called views a set it as views
     app.set("view engine", "ejs")                                                                           // Set our view engine as ejs. Any views in the views directory are ejs files.
     
     app.use(express.static(`${__dirname}/public`))                                                          // This is how the app knows how to find public folder to access the css files

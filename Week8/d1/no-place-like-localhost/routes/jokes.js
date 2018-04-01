@@ -14,3 +14,4 @@ jokesRouter.patch("/:id", jokesCtrl.update)
 jokesRouter.delete("/:id", jokesCtrl.destroy)
 
 module.exports = jokesRouter
+ 
