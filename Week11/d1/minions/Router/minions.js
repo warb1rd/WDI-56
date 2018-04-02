@@ -10,3 +10,4 @@ minionsRouter.patch("/:id", minionsCtrl.update)
 minionsRouter.delete("/:id", minionsCtrl.destroy)
 
 module.exports = minionsRouter
+
